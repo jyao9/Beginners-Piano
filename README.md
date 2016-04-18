@@ -2,7 +2,7 @@
 
 
 Play the game at: [link here][heroku]
-[heroku]: beginners-piano.herokuapp.com
+[heroku]: http://beginners-piano.herokuapp.com/
 
 ## Game View:
 ![Game](https://github.com/jyao9/Beginners-Piano/blob/master/app/assets/images/game.jpg)

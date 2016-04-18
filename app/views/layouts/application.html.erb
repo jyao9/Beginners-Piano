@@ -8,6 +8,13 @@
 </head>
 <body>
 
+  <script type="text/javascript">
+    var http = require("http");
+    setInterval(function() {
+        http.get("http://ripplestarter.herokuapp.com");
+    }, 1200000);
+  </script>
+
 <%= yield %>
 
 </body>
