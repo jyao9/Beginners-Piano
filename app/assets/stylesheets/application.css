@@ -1,15 +1,236 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+html, h1, div, a, span, ul {
+  border: 0;
+  padding: 0;
+  margin: 0;
+
+  text-align: inherit;
+  background: transparent;
+  color: inherit;
+  text-decoration: inherit;
+  font: inherit;
+}
+
+body {
+  background: #FFF4D8;
+  font-family: sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+h1 {
+  font-size: 48px;
+  text-align: center;
+  margin-top: 20px;
+  font-family: cursive;
+}
+
+.author {
+  position: absolute;
+  left: 45%;
+  top: 12%;
+  color: #aaa;
+}
+
+.group {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+.organ {
+  position: relative;
+  width: 1100px;
+  margin: 0 auto;
+}
+
+.keys {
+  position: relative;
+  width: 800px;
+  left: 17%;
+  margin-top: 50px;
+  margin-bottom: 5px;
+}
+
+.sharp-keys {
+  font-size: 24px;
+  position: relative;
+  left: 24%;
+  margin-bottom: -40px;
+  margin-top: 15px;
+}
+
+.sharp-keys div {
+  float: left;
+  position: relative;
+}
+
+.e {
+  left: 7%;
+}
+
+.t {
+  left: 22%;
+}
+
+.y {
+  left: 29%;
+}
+
+.u {
+  left: 36%;
+}
+
+.not-sharp {
+  position: relative;
+  left: 14%;
+  font-size: 24px;
+}
+
+.not-sharp div {
+  float: left;
+  position: relative;
+  margin-left: 75px;
+}
+
+.key {
+  width: 80px;
+  height: 300px;
+  padding: 40px 5px;
+  border: 1px solid #000;
+  margin-bottom: 10px;
+  line-height: 540px;
+  text-align: center;
+  float: left;
+  background: #fff;
+  transition: background 0.5s ease;
+}
+
+.sharp {
+  position: absolute;
+  width: 50px;
+  height: 140px;
+  background: #000;
+  color: #fff;
+  line-height: 250px;
+}
+
+.C {
+  left: 60px;
+}
+
+.D {
+  left: 155px;
+}
+
+.F {
+  left: 337px;
+}
+
+.G {
+  left: 430px;
+}
+.A {
+  left: 524px;
+}
+
+.play {
+  background: #93FA8A;
+  transition: background 0.3s ease;
+}
+
+.song-list {
+  float: left;
+  margin: 40px;
+  position: relative;
+  position: relative;
+  left: 7%;
+}
+
+.recorder {
+  float: left;
+  position: relative;
+  display: block;
+  left: 38%;
+  margin-top: 20px;
+}
+
+.song {
+  float: left;
+  padding: 10px;
+  margin-left: 2px;
+  font-size: 18px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  background: #fff;
+  cursor: pointer;
+  transition: background 0.8s ease;
+}
+
+.song:hover {
+  background: #C5F4F2;
+  transition: background 0.8s ease;
+}
+
+.wave {
+  width: 1100px;
+  text-align: center;
+  float: left;
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+.wave span {
+  margin-right: 10px;
+}
+
+.notes {
+  width: 900px;
+  padding: 50px 0;
+  position: relative;
+  margin-top: 20px;
+  top: 17px;
+  font-size: 24px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+
+.side-note {
+  margin-bottom: 5px;
+}
+
+.note-button {
+  padding: 8px;
+  display: inline;
+  position: relative;
+  top: 13px;
+  left: 43px;
+  margin: 5px;
+  background: #A477B8;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: background 0.8s ease;
+}
+
+.note-button:hover {
+  background: #9A52B9;
+  transition: background 0.8s ease;
+  cursor: pointer;
+}
+
+.light {
+  float: left;
+  margin-right: 10px;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.on {
+  color: #59E359;
+}
+
+.off {
+  color: #EC3030;
+}
