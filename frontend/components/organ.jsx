@@ -11,7 +11,15 @@ var Organ = React.createClass({
   },
 
   handleWaveChange: function (e) {
-    this.setState({ wave: e.target.value })
+    if (e.target.value === "piano") {
+      this.setState({ wave: "sine" })
+    } else if (e.target.value === "flute") {
+      this.setState({ wave: "triangle" })
+    } else if (e.target.value === "synth 1") {
+      this.setState({ wave: "sawtooth" })
+    } else if (e.target.value === "synth 2") {
+      this.setState({ wave: "square" })
+    }
   },
 
   render: function () {
@@ -49,10 +57,10 @@ var Organ = React.createClass({
         <div className="wave">
           Select a wave type:
           <select onChange={this.handleWaveChange}>
-            <option>sine</option>
-            <option>triangle</option>
-            <option>sawtooth</option>
-            <option>square</option>
+            <option>piano</option>
+            <option>flute</option>
+            <option>synth 1</option>
+            <option>synth 2</option>
           </select>
         </div>
         <Recorder />

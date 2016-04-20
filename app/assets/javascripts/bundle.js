@@ -20437,7 +20437,15 @@
 	  },
 	
 	  handleWaveChange: function (e) {
-	    this.setState({ wave: e.target.value });
+	    if (e.target.value === "piano") {
+	      this.setState({ wave: "sine" });
+	    } else if (e.target.value === "flute") {
+	      this.setState({ wave: "triangle" });
+	    } else if (e.target.value === "synth 1") {
+	      this.setState({ wave: "sawtooth" });
+	    } else if (e.target.value === "synth 2") {
+	      this.setState({ wave: "square" });
+	    }
 	  },
 	
 	  render: function () {
@@ -20545,22 +20553,22 @@
 	          React.createElement(
 	            'option',
 	            null,
-	            'sine'
+	            'piano'
 	          ),
 	          React.createElement(
 	            'option',
 	            null,
-	            'triangle'
+	            'flute'
 	          ),
 	          React.createElement(
 	            'option',
 	            null,
-	            'sawtooth'
+	            'synth 1'
 	          ),
 	          React.createElement(
 	            'option',
 	            null,
-	            'square'
+	            'synth 2'
 	          )
 	        )
 	      ),
@@ -27231,11 +27239,17 @@
 	
 	  render: function () {
 	    var recordingLight;
+	    var button;
 	    if (this.state.isRecording) {
 	      recordingLight = React.createElement(
 	        'div',
 	        { className: 'light on' },
 	        '●'
+	      );
+	      button = React.createElement(
+	        'button',
+	        { onClick: this.stopRecording },
+	        'Stop Recording'
 	      );
 	    } else {
 	      recordingLight = React.createElement(
@@ -27243,22 +27257,18 @@
 	        { className: 'light off' },
 	        '●'
 	      );
+	      button = React.createElement(
+	        'button',
+	        { onClick: this.beginRecording },
+	        'Start Recording'
+	      );
 	    }
 	
 	    return React.createElement(
 	      'div',
 	      { className: 'recorder group' },
 	      recordingLight,
-	      React.createElement(
-	        'button',
-	        { onClick: this.beginRecording },
-	        'Start Recording'
-	      ),
-	      React.createElement(
-	        'button',
-	        { onClick: this.stopRecording },
-	        'Stop Recording'
-	      ),
+	      button,
 	      React.createElement(
 	        'button',
 	        { onClick: this.state.track.play.bind(this.state.track) },
@@ -27347,7 +27357,7 @@
 	  displayName: 'Songs',
 	
 	  getInitialState: function () {
-	    return { currentSong: null, noteType: "note" };
+	    return { currentSong: null, noteType: "key" };
 	  },
 	
 	  handleClick: function (e) {

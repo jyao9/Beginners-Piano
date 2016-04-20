@@ -3,7 +3,7 @@ var Notes = require('./notes.jsx');
 
 var Songs = React.createClass({
   getInitialState: function () {
-    return({ currentSong: null, noteType: "note" })
+    return({ currentSong: null, noteType: "key" })
   },
 
   handleClick: function (e) {

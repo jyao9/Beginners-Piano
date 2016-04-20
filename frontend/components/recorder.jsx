@@ -33,17 +33,19 @@ var Recorder = React.createClass({
 
   render: function () {
     var recordingLight;
+    var button;
     if (this.state.isRecording) {
       recordingLight = <div className="light on">●</div>;
+      button = <button onClick={this.stopRecording}>Stop Recording</button>;
     } else {
       recordingLight = <div className="light off">●</div>;
+      button = <button onClick={this.beginRecording}>Start Recording</button>;
     }
 
     return (
       <div className="recorder group">
         {recordingLight}
-        <button onClick={this.beginRecording}>Start Recording</button>
-        <button onClick={this.stopRecording}>Stop Recording</button>
+        {button}
         <button onClick={this.state.track.play.bind(this.state.track)}>Play</button>
       </div>
     );
