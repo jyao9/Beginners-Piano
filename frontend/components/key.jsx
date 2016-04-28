@@ -2,6 +2,8 @@ var React = require('react');
 var KeyStore = require('../stores/key_store.js');
 var Note = require('../util/note.js');
 var NoteConstants = require('../constants/tones.js');
+var KeyActions = require('../actions/key_actions.js');
+
 
 var Key = React.createClass({
   getInitialState: function () {
@@ -22,6 +24,14 @@ var Key = React.createClass({
   componentWillReceiveProps: function (newProps) {
     var newWave = newProps.wave;
     this.note.changeWave(newWave);
+  },
+
+  handleDown: function () {
+    KeyActions.keyPressed(this.props.noteName);
+  },
+
+  handleUp: function () {
+    KeyActions.keyReleased(this.props.noteName);
   },
 
   setStateFromStore: function () {
@@ -55,7 +65,7 @@ var Key = React.createClass({
       style = "key";
     }
 
-    return <li className={style}>{this.props.noteName.slice(0, -1)}</li>;
+    return <li onMouseDown={this.handleDown} onMouseUp={this.handleUp} className={style}>{this.props.noteName.slice(0, -1)}</li>;
   }
 });
 

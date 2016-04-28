@@ -20611,6 +20611,7 @@
 	var KeyStore = __webpack_require__(175);
 	var Note = __webpack_require__(193);
 	var NoteConstants = __webpack_require__(172);
+	var KeyActions = __webpack_require__(167);
 	
 	var Key = React.createClass({
 	  displayName: 'Key',
@@ -20633,6 +20634,14 @@
 	  componentWillReceiveProps: function (newProps) {
 	    var newWave = newProps.wave;
 	    this.note.changeWave(newWave);
+	  },
+	
+	  handleDown: function () {
+	    KeyActions.keyPressed(this.props.noteName);
+	  },
+	
+	  handleUp: function () {
+	    KeyActions.keyReleased(this.props.noteName);
 	  },
 	
 	  setStateFromStore: function () {
@@ -20668,7 +20677,7 @@
 	
 	    return React.createElement(
 	      'li',
-	      { className: style },
+	      { onMouseDown: this.handleDown, onMouseUp: this.handleUp, className: style },
 	      this.props.noteName.slice(0, -1)
 	    );
 	  }
