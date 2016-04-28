@@ -2,7 +2,6 @@ var KeyActions = require('../actions/key_actions.js');
 
 function Track(attrs) {
   var defaults = {
-    name: "",
     roll: []
   };
 

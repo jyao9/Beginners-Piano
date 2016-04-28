@@ -27297,7 +27297,6 @@
 	
 	function Track(attrs) {
 	  var defaults = {
-	    name: "",
 	    roll: []
 	  };
 	
