@@ -39,6 +39,20 @@ var Songs = React.createClass({
       notes = <Notes noteType={this.state.noteType} song={this.state.currentSong} />
     }
 
+    var noteButton;
+    var keyButton;
+
+    if (this.state.currentSong === null) {
+      noteButton = <div className="note-button" onClick={this.changeToNotes}>Notes</div>;
+      keyButton = <div className="note-button" onClick={this.changeToKeys}>Keys</div>;
+    } else if (this.state.noteType === "key") {
+      noteButton = <div className="note-button" onClick={this.changeToNotes}>Notes</div>;
+      keyButton = <div className="note-button pressed" onClick={this.changeToKeys}>Keys</div>;
+    } else if (this.state.noteType === "note") {
+      noteButton = <div className="note-button pressed" onClick={this.changeToNotes}>Notes</div>;
+      keyButton = <div className="note-button" onClick={this.changeToKeys}>Keys</div>;
+    }
+
     return(
       <div className="song-list group">
         <div className="side-note">
@@ -46,8 +60,8 @@ var Songs = React.createClass({
           C(l) stands for low C and C(h) stands for high C
         </div>
         {songLinks}
-        <div className="note-button" onClick={this.changeToNotes}>Notes</div>
-        <div className="note-button" onClick={this.changeToKeys}>Keys</div>
+        {noteButton}
+        {keyButton}
         {notes}
       </div>
     );

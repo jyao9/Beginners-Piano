@@ -221,6 +221,10 @@ h1 {
   cursor: pointer;
 }
 
+.pressed {
+  background: #9A52B9;
+}
+
 .light {
   float: left;
   margin-right: 10px;

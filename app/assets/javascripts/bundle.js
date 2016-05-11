@@ -27399,6 +27399,44 @@
 	      notes = React.createElement(Notes, { noteType: this.state.noteType, song: this.state.currentSong });
 	    }
 	
+	    var noteButton;
+	    var keyButton;
+	
+	    if (this.state.currentSong === null) {
+	      noteButton = React.createElement(
+	        'div',
+	        { className: 'note-button', onClick: this.changeToNotes },
+	        'Notes'
+	      );
+	      keyButton = React.createElement(
+	        'div',
+	        { className: 'note-button', onClick: this.changeToKeys },
+	        'Keys'
+	      );
+	    } else if (this.state.noteType === "key") {
+	      noteButton = React.createElement(
+	        'div',
+	        { className: 'note-button', onClick: this.changeToNotes },
+	        'Notes'
+	      );
+	      keyButton = React.createElement(
+	        'div',
+	        { className: 'note-button pressed', onClick: this.changeToKeys },
+	        'Keys'
+	      );
+	    } else if (this.state.noteType === "note") {
+	      noteButton = React.createElement(
+	        'div',
+	        { className: 'note-button pressed', onClick: this.changeToNotes },
+	        'Notes'
+	      );
+	      keyButton = React.createElement(
+	        'div',
+	        { className: 'note-button', onClick: this.changeToKeys },
+	        'Keys'
+	      );
+	    }
+	
 	    return React.createElement(
 	      'div',
 	      { className: 'song-list group' },
@@ -27408,16 +27446,8 @@
 	        'Note: C(l) stands for low C and C(h) stands for high C'
 	      ),
 	      songLinks,
-	      React.createElement(
-	        'div',
-	        { className: 'note-button', onClick: this.changeToNotes },
-	        'Notes'
-	      ),
-	      React.createElement(
-	        'div',
-	        { className: 'note-button', onClick: this.changeToKeys },
-	        'Keys'
-	      ),
+	      noteButton,
+	      keyButton,
 	      notes
 	    );
 	  }
